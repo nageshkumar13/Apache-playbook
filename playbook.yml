@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: all[0]
   tasks:
     - name: Install the Apache web server
       yum:
@@ -16,3 +16,21 @@
       copy:
         src: index.html
         dest: /var/www/html/index.html
+
+- hosts: all[1]
+  tasks:
+    - name: Install the Apache web server
+      yum:
+        name: httpd
+        state: present
+
+    - name: Configure the Apache web server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Copy the index.html file to the web root
+      copy:
+        src: index1.html
+        dest: /var/www/html/index1.html        
