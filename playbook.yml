@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
     - name: Install the Apache web server
-      apt:
+      yum:
         name: apache2
         state: present
     - name: Configure the Apache web server
