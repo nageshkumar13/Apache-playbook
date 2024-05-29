@@ -2,14 +2,16 @@
 - hosts: all
   tasks:
     - name: Install the Apache web server
-      apt:
-        name: apache2
+      yum:
+        name: httpd
         state: present
+
     - name: Configure the Apache web server
       service:
-        name: apache2
+        name: httpd
         state: started
         enabled: yes
+
     - name: Copy the index.html file to the web root
       copy:
         src: index.html
