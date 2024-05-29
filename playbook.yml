@@ -12,25 +12,7 @@
         state: started
         enabled: yes
 
-    - name: Copy the index1.html file to the web root
+    - name: Copy the index.html file to the web root
       copy:
-        src: index1.html
-        dest: /var/www/html/index1.html
-
-- hosts: myHosts[1]
-  tasks:
-    - name: Install the Apache web server
-      yum:
-        name: httpd
-        state: present
-
-    - name: Configure the Apache web server
-      service:
-        name: httpd
-        state: started
-        enabled: yes
-
-    - name: Copy the index1.html file to the web root
-      copy:
-        src: index1.html
-        dest: /var/www/html/index1.html        
+        src: index.html
+        dest: /var/www/html/index.html
