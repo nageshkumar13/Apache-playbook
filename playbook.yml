@@ -1,5 +1,5 @@
 ---
-- hosts: all[0]
+- hosts: myHosts[0]
   tasks:
     - name: Install the Apache web server
       yum:
@@ -17,7 +17,7 @@
         src: index.html
         dest: /var/www/html/index.html
 
-- hosts: all[1]
+- hosts: myHosts[1]
   tasks:
     - name: Install the Apache web server
       yum:
