@@ -1,5 +1,5 @@
 ---
-- hosts: myHosts[0]
+- hosts: myHos
   tasks:
     - name: Install the Apache web server
       yum:
